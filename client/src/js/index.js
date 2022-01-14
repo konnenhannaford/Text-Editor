@@ -23,6 +23,7 @@ if (typeof editor === 'undefined') {
   loadSpinner();
 }
 
+// https://developers.google.com/web/tools/workbox/modules/workbox-window
 // Check if service workers are supported
 if ('serviceWorker' in navigator) {
   // register workbox service worker
@@ -31,3 +32,18 @@ if ('serviceWorker' in navigator) {
 } else {
   console.error('Service workers are not supported in this browser.');
 }
+
+// written different on site 
+// import {Workbox} from 'workbox-window';
+
+// if ('serviceWorker' in navigator) {
+//   const wb = new Workbox('/sw.js');
+
+//   wb.register();
+// }import {Workbox} from 'workbox-window';
+
+// if ('serviceWorker' in navigator) {
+//   const wb = new Workbox('/sw.js');
+
+//   wb.register();
+// }
