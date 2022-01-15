@@ -20,12 +20,14 @@ export const putDb = async (content) => {
   const jateDB = await openDB('jate', 1);
   const tx = jateDB.transaction('jate', 'readwrite');
   const store = tx.objectStore('jate');
-  const request = store.add({ name: name, home_phone: home, cell_phone: cell, email: email });
+  // const request = store.add({ content });
+  const request = store.put({ id: 1, todo: content });
   const result = await request;
   console.log('🚀 - data saved to the database', result);
 
 };
 ;
+
 // TODO: Add logic for a method that gets all the content from the database
 export const getDb = async () => {
   // doesnt work with this?
